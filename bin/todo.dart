@@ -1,5 +1,8 @@
-import 'package:todo/todo.dart' as todo;
+import 'package:todo/todo.dart';
 
 void main(List<String> arguments) {
-  print('Hello world: ${todo.calculate()}!');
+  Todo task = Todo(1, "Купить хлеб");
+  print(task.id);
+  print(task.title);
+  print(task.isDone);
 }
