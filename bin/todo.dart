@@ -1,9 +1,15 @@
 import 'package:todo/todo.dart';
 import 'dart:io';
+import 'package:ansicolor/ansicolor.dart';
+
+final AnsiPen greenPen = AnsiPen()..green();
+final AnsiPen redPen = AnsiPen()..red();
+final AnsiPen bluePen = AnsiPen()..blue();
+final AnsiPen yellowPen = AnsiPen()..yellow();
 
 void printMenu(){
   print('');
-  print('ToDo список');
+  print(yellowPen(('ToDo список')));
   print('add - добавить задачу');
   print('list - показать все задачи');
   print('done - отметить выполненной');
@@ -16,7 +22,7 @@ void addTodo(List<Todo> todos) {
   String? input = stdin.readLineSync();
 
   if (input == null || input.trim().isEmpty) {
-    print("Ошибка! Пустое название!!!");
+    print(redPen(("Ошибка! Пустое название!!!")));
     return;
   }
   
